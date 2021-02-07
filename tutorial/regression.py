@@ -24,7 +24,7 @@ class Net(torch.nn.Module):
 
 
 net = Net(n_feature=1, n_hidden=10, n_output=1)
-print(net)
+# print(net)
 
 optimizer = torch.optim.SGD(net.parameters(), lr=0.2)
 loss_func = torch.nn.MSELoss()
@@ -48,5 +48,6 @@ for t in range(200):
         plt.text(0.5, 0, 'Loss=%.4f' % loss.data.numpy(), fontdict={'size': 20, 'color':  'red'})
         plt.pause(0.1)
 
+print(net.hidden.parameters())
 plt.ioff()
 plt.show()
